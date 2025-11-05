@@ -33,9 +33,20 @@
 ### **Control Scripts:**
 - `performance_control.sh` - Main performance management interface
 - `fan_control.sh` - Smart thermal management
+- `guaranteed_usb_migration.sh` - **NEW!** Smart USB/NVMe migration tool
+- `configure_universal_boot.sh` - **NEW!** Universal storage boot configuration
 - Complete benchmark and analysis suite
 
+### **Universal Storage Support:**
+- ✅ **SD Card** - Default boot support
+- ✅ **USB Drive** - Fast migration with preserved overclocking
+- ✅ **NVMe SSD** - High-performance storage ready
+- ✅ **eMMC** - On-board storage compatible
+- ✅ **UFS** - Universal Flash Storage ready
+- 📖 **[Universal Boot Documentation](docs/UNIVERSAL_BOOT_VERIFIED.md)**
+
 ### **System Integration:**
+- UUID-based boot configuration (works with all storage types)
 - Systemd services for automatic fan control
 - Boot-time module loading
 - Temperature-based performance scaling
@@ -45,13 +56,24 @@
 ### **Quick Start:**
 ```bash
 # Main performance control
-./performance_control.sh
+./scripts/performance_control.sh
 
 # Fan management  
-./fan_control.sh thermal
+./scripts/fan_control.sh thermal
 
 # Direct hardware control
 echo "2520,1488" > /sys/devices/platform/soc@3000000/3600000.npu/llm_overclock
+```
+
+### **🚀 Migrate to USB/NVMe/eMMC/UFS:**
+```bash
+# Configure universal boot (run once)
+sudo ./scripts/configure_universal_boot.sh
+
+# Migrate to USB/NVMe (copies only 14GB, takes 10-15 min)
+sudo ./scripts/guaranteed_usb_migration.sh
+
+# After migration: shutdown, remove SD, boot from USB!
 ```
 
 ### **Performance Profiles:**
