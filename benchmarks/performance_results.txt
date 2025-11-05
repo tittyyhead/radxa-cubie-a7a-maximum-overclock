@@ -1,0 +1,13 @@
+=== RADXA CUBIE A7A MAXIMUM OVERCLOCKING RESULTS ===
+Date: Wed 05 Nov 2025 03:12:05 PM EST
+
+NPU/GPU Status:
+UNIFIED GPU/NPU OVERCLOCKING FOR LLMs
+NPU: 2520 MHz
+GPU: 1488 MHz
+Usage: echo <npu_mhz>,<gpu_mhz> > llm_overclock
+Example: echo 1800,800 > llm_overclock
+Presets:
+  conservative: echo conservative > llm_overclock
+  aggressive: echo aggressive > llm_overclock
+  maximum: echo maximum > llm_overclock
